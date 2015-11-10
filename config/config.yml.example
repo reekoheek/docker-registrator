@@ -1,0 +1,11 @@
+listeners:
+  bind9:
+    module: ./listeners/bind9
+    active: true
+    nameservers:
+      - "http://192.168.99.101:8080/index.php"
+    domain: buncit.sagara.id
+  reverseProxy:
+    module: ./listeners/reverse-proxy
+    servers:
+      - "http://192.168.99.101:8081"
